@@ -91,12 +91,23 @@ body::after{
 /* ── a few faint pixel birds drifting across ── */
 .bird{
   position:absolute;left:0;top:var(--y);width:clamp(38px,var(--w),110px);
-  opacity:.16;will-change:transform;
+  opacity:var(--o,.16);will-change:transform;
   animation:fly var(--dur) linear var(--delay) infinite;
 }
 .sp{display:block;width:100%;background:center/contain no-repeat;image-rendering:pixelated;animation:bob 6s ease-in-out var(--bob,0s) infinite alternate}
 .sp-blue{aspect-ratio:102/72;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAABICAYAAAAEeYAkAAACyElEQVR4nO2dz2oTURjF585MYqyCthXBhZqdC7firqI+gOlruDCCLyLtSvAlGh9AQXf6Au6q4MY/YBGUcSYz4wuck/LhhJzC+S2/NnNv8uuFw3fvTVMmRp7nPar3PSwPRkoJ1ruuwz9YM/kmBjWnYzGiWIwoFiOKxYiy9sSR50UoZU0Pf5AHFaFxU9/C+vGTK7DeNDWsj8djWF93WvOKEcViRLEYUSxGFIsRZbBkwXpcNw9IykrkbyKYvrK+g+VP811YX9Z/8bA5nk/b4nQ3Go3wdPp+kM/UK0YUixHFYkSxGFEsRpSS/SC6k9h1JB09vQrr08Pvp07uv+hwmmLpi72vyWQC63VNe2vscwulNa8YUSxGFIsRxWJEsRhRSpa+qqqCL2CpJsq58xdg/cbzr/gF0R3MgdqArFdWFHg+Q51/84oRxWJEsRhRLEYUixElpZRgjKibBr6gJGkkSrNcwvrW1kVYvx5Nay2e/5dn12C9qv7gx5BUxtJpWeL2I+uVsVsGXjGiWIwoFiOKxYhiMaKULBXcevEL1j8+vgzrBXlOn+He0e2Xv2G9xRuhcQp87ouluzFNm6znht8Xe0qZcE+SDeAVI4rFiGIxoliMKBYjCt3mY3cn6R1JdnqfcDzHdyGnB9/IhOgROAw5V/Z5vgPrJ/fvxJ4fhEWy7TcfYN0rRhSLEcViRLEYUSxGlPDhq+gtAHbM6t7+KzyhYLpjA7xbPIL1nw9w+tp+/T42bpAVLUD3ys4SFiOKxYhiMaJYjCjBBlT8e7oS3blj3aPQRl+WkZ3TvdkC1ncWM1g/eXiXjBsFz+cSSX1sh9crRhSLEcViRLEYUSxGlI18b32Wreq54d/fmx3Beri3RlLQ2yPcWxuKFXcz3Ss7S1iMKBYjisWIYjGibCyVRWE9t+g3UbDbDX2/mf+sxPCKEcViRLEYUSxGFIsR5R9YYKMKsBI8CgAAAABJRU5ErkJggg==)}
 .sp-yellow{aspect-ratio:102/78;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAABOCAYAAADSIGM5AAABTklEQVR42u3c0W3DMAwAUbPIRulMHaozNTMpC1QGGFCWDL37LtzYBxIHOW0c69EW+zwx45d+HVgSYogBMcTgzsWRqqzWaqIsIkqu37vO6GdnYqwyEEMMiFFltfWVr6zcR+pFU1Xdzao1E2OVgRhiQMxmPLKVVVUvrd3jAWXP3CKiVdSaibHKQAwxIGbDKis649qr1kwMMSAGxBCD2jiaVWWja+3ubzZNjFUGYogBMcSAGBBDDIghBpdz8r2y3tFO1VnT2D//7B2JnZxljSb1fTMTY5WBGGJAzGZEtiKqXgD23zCOvf7f8VxKwPfxMjFWGYghBsTgswOrkm5qP0U38Jurr14FrebAxFhlIIYYEKPKPquyqsoqu7FkrY3mpAZVmVUGYogBMbjgv8h2f3hSxfVqbbVnbWKsMhBDDIhRZZfRNrxnE2OVgRhiQAz+5w1eKT6b0FbpXgAAAABJRU5ErkJggg==)}
+.sp-star{aspect-ratio:78/66;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABCCAYAAAD5aOBmAAAA/ElEQVR42u3cwQ2CQBAFUNZYBRzUbmjHSmzHbpSDtKF3YRMnsGGJ7x+JMZuXmUxmJaamsrTt6T33fByHVNM5D42AAwcOnHzlWNv0fN3Ps5/v+qaqaaviwIEDB07AgQMHDpyAK7er5nbGvWSr86s4cODAgZNJUvQm9t/S9U8Vp1XBgQMnP07V6A4YnraX6/zzx20X0zP3u62K06rgwIGTSbJvK+WmSe6tob3sttHpqeK0Kjhw4GT5VF0tle2kKg4cOHACrljK3wAHd8ZoSp/HDbBWBQcOnNSzq65145r//m1upFUcOHDgwMnyXTWarf6lofT5VZxWBQcOnEzyATSyP9vSyWQNAAAAAElFTkSuQmCC)}
+.sp-heart{aspect-ratio:66/60;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAA8CAYAAADSfGxZAAAA2ElEQVR42u3Z2wnCQBAF0I2kBzE/tiDpzA7SgZ2JLfgTsQptIIuKMybquZ8LeXCY7CVsUyrpuu2tBGQcz03EfbLfZ1UEBAgQIB6mre3Gx80u5AF9KSG7ffb7mAgQIECAeKY1Xr1gPewn16/DIXW3NxEgQIAAAQIECBAgQPz2v0btn8JEgAABAsQfpHpSnX3ekZ3+cppcdxru0wABAkRGa3xLm7zaDiYCBAgQID7ZGnO1SVQ7mAgQIECAWEJrRLVJdjuYCBAgQIB4I+1cD661g4kAAQIEiAXnDoFJMlZUzblGAAAAAElFTkSuQmCC)}
+.sp-cloud{aspect-ratio:96/48;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAwCAYAAADuFn/PAAAAw0lEQVR42u3bMQqDQBBGYQ2ewiZNII33P0LKVGlC0th4jXiAMIEFh4zyvVYYdnzM8LNo3xVjHM+fzPrLMveV+j11IIAAEEAA/kJ6ImhNNY/nO/U80/WySWpq7SuqYwKsIAJAAAHYewqKUkF2qskmSk2tfUV1TIAVRAAIIADVUlC1O5y9IwVZQSCAABBQjOGodzgmAAQQAAIIAAEEgAACQAAB+GKIHtzuL2/HBBAAAggAAcdls++C8Bv/iFlBIIAAEFCMFSp+JU5gHUp9AAAAAElFTkSuQmCC)}
+.sp-coin{aspect-ratio:54/54;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAAuUlEQVR42u3asRHCIAAFUPCcIhbRLexsXcdJXMfWzi1MCrNGXAALPCDGe7/kUuQd3D84iCEzXdfPYYFM0xhzvt+EPw0YGFjdbHPb73XbL/Kju3OYc9rSUgQDA/sqsVj7HS7p8ee1clsOliIYGFiDvWLt9hsf9+R4fzyZMTAwMDAwMDCwte4VK5+IzRgYGNjKWrFQSp2ULUUwMLCi+fja5ffuoIfkuDtoMDCwNq2Y25a1470iGBhYk7wBX5Ej5tXufzQAAAAASUVORK5CYII=)}
+.sp-camera{aspect-ratio:90/66;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABCCAYAAADXLcH0AAABA0lEQVR42u3coQrCUBSA4U3s9i3oe/gcJrNVMApGwShYzSafw/fQsHWfQJPNCRe83Kv7/igy8OOwexhqWSSqqsaPmNdv21tZZNSgEGjQAg2655WxT//QVutt0Pv3u42JFmjQoAX6p7eO0NNfn7cgE+3WAVqgQfe+YapTOHahW9PsdHz7+nm+MNFuHQINGrSy2jq6toumuSb5YHU9CdpGvrVdmGi3DtACDVqxt47Qpsv7V65zOYxMtECDBi3QoAUaNGiBBq1XyZ51/MozChMNWqBBg1ZuW0fX9yW6vl8Ru9x+g2OiQYMWaNC2jr6d/iYatECDFuhEZfcvYSZaoEELNOg/7Qnp3yT0Zl9vdQAAAABJRU5ErkJggg==)}
+.bird.rev{animation-name:flyL}
+.bird.up{left:var(--x);top:0;animation-name:rise}
+/* with JS on, objects get a new random route every pass (see script at the end) */
+.ambient.js .bird{left:0;top:0;animation:none}
+@keyframes flyL{from{transform:translate3d(116vw,0,0)}to{transform:translate3d(-16vw,var(--dy,0),0)}}
+@keyframes rise{from{transform:translate3d(0,112vh,0)}to{transform:translate3d(var(--dx,0),-24vh,0)}}
 @keyframes fly{from{transform:translate3d(-16vw,0,0)}to{transform:translate3d(116vw,var(--dy,0),0)}}
 @keyframes bob{from{transform:translateY(-12px) rotate(-3deg)}to{transform:translateY(12px) rotate(3deg)}}
 
@@ -429,6 +440,12 @@ input[type=text]:focus{box-shadow:0 0 0 3px rgba(200,67,79,.25),0 0 12px rgba(20
   <span class="bird" style="--y:54%;--w:5.5vmin;--dur:140s;--delay:-40s;--dy:8vh;--bob:-4s"><span class="sp sp-blue"></span></span>
   <span class="bird" style="--y:72%;--w:9vmin;--dur:105s;--delay:-90s;--dy:-5vh;--bob:-1s"><span class="sp sp-yellow"></span></span>
   <span class="bird" style="--y:88%;--w:6vmin;--dur:130s;--delay:-15s;--dy:-7vh;--bob:-3s"><span class="sp sp-blue"></span></span>
+  <span class="bird" style="--y:20%;--w:13vmin;--dur:150s;--delay:-60s;--dy:3vh;--bob:-1s;--o:.11"><span class="sp sp-cloud"></span></span>
+  <span class="bird rev" style="--y:63%;--w:10vmin;--dur:175s;--delay:-110s;--dy:-3vh;--bob:-3s;--o:.10"><span class="sp sp-cloud"></span></span>
+  <span class="bird up" style="--x:8%;--w:4.5vmin;--dur:110s;--delay:-30s;--dx:6vw;--bob:-2s;--o:.15"><span class="sp sp-star"></span></span>
+  <span class="bird up" style="--x:90%;--w:4.5vmin;--dur:125s;--delay:-85s;--dx:-5vw;--bob:-4s;--o:.15"><span class="sp sp-heart"></span></span>
+  <span class="bird rev" style="--y:41%;--w:4vmin;--dur:100s;--delay:-55s;--dy:6vh;--bob:-1s;--o:.15"><span class="sp sp-coin"></span></span>
+  <span class="bird" style="--y:79%;--w:7vmin;--dur:135s;--delay:-25s;--dy:-4vh;--bob:-3s;--o:.14"><span class="sp sp-camera"></span></span>
 </div>
 
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
@@ -1614,6 +1631,40 @@ saveBtn.onclick=async()=>{
 againBtn.onclick=()=>{if(!busy)run();};
 goBtn.onclick=()=>run();
 window.addEventListener("pagehide",()=>{if(stream)stream.getTracks().forEach(t=>t.stop());});
+})();
+</script>
+<script>
+/* ── background objects: a fresh random route each pass ── */
+(function(){
+  const amb=document.querySelector(".ambient");
+  if(!amb||!amb.animate||matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  amb.classList.add("js");
+  const rnd=(a,b)=>a+Math.random()*(b-a);
+  function launch(el,first){
+    const W=innerWidth, H=innerHeight, w=el.offsetWidth||60, h=el.offsetHeight||50, m=Math.max(w,h)+30;
+    const cls=el.firstElementChild.className;
+    const kind=/sp-(blue|yellow)/.test(cls)?"bird":/sp-cloud/.test(cls)?"cloud":"obj";
+    const sp=kind==="cloud"?[14,28]:kind==="bird"?[38,66]:[26,48];      // pixels per second
+    const side=Math.floor(Math.random()*4);                              // which edge it enters from
+    let x0,y0,x1,y1;
+    if(side===0){x0=-m;y0=rnd(0,H);x1=W+m;y1=rnd(0,H);}
+    else if(side===1){x0=W+m;y0=rnd(0,H);x1=-m;y1=rnd(0,H);}
+    else if(side===2){x0=rnd(0,W);y0=-m;x1=rnd(0,W);y1=H+m;}
+    else{x0=rnd(0,W);y0=H+m;x1=rnd(0,W);y1=-m;}
+    const dist=Math.hypot(x1-x0,y1-y0), dur=dist/rnd(sp[0],sp[1])*1000;
+    const nx=-(y1-y0)/dist, ny=(x1-x0)/dist;                             // sideways direction for the gentle wave
+    const amp=kind==="cloud"?rnd(6,16):rnd(16,44), cyc=rnd(1,2.5), ph=rnd(0,6.28);
+    const flip=(kind==="bird"&&x1<x0)?" scaleX(-1)":"";                  // birds face where they're going
+    const kf=[];
+    for(let i=0;i<=16;i++){
+      const t=i/16, o=amp*Math.sin(ph+t*6.2832*cyc);
+      kf.push({transform:"translate3d("+(x0+(x1-x0)*t+nx*o-w/2).toFixed(1)+"px,"+(y0+(y1-y0)*t+ny*o-h/2).toFixed(1)+"px,0)"+flip});
+    }
+    const a=el.animate(kf,{duration:dur,easing:"linear",fill:"forwards"});
+    if(first) a.currentTime=rnd(.05,.95)*dur;                            // spread them out at load
+    a.onfinish=()=>{ launch(el,false); a.cancel(); };
+  }
+  document.querySelectorAll(".ambient .bird").forEach(el=>launch(el,true));
 })();
 </script>
 </body>
